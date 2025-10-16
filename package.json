@@ -1,0 +1,22 @@
+{
+    "name": "audio-player-api-react-zustand",
+    "version": "1.0.0",
+    "description": "Cross-platform Zustand audio store for React and React Native",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup src/index.ts --dts --format cjs,esm"
+    },
+    "peerDependencies": {
+        "react": ">=17",
+        "zustand": ">=4"
+    },
+    "devDependencies": {
+        "typescript": "^5",
+        "tsup": "^8"
+    }
+}
