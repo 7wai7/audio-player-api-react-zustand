@@ -1,4 +1,4 @@
-import { useAudioStore } from "store";
+import { createAudioStore } from "store";
 
 export * from "interfases/index";
-export default useAudioStore;
+export default createAudioStore;

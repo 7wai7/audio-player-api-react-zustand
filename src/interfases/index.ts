@@ -1,2 +1,2 @@
 export * from "./IAudioStore";
-export * from "./ISong";
+export * from "./ISongBase";

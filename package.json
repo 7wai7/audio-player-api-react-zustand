@@ -2,8 +2,18 @@
     "name": "audio-player-api-react-zustand",
     "version": "1.0.0",
     "description": "Cross-platform Zustand audio store for React and React Native",
+    "homepage": "https://github.com/7wai7/audio-player-api-react-zustand#readme",
+    "bugs": {
+        "url": "https://github.com/7wai7/audio-player-api-react-zustand/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/7wai7/audio-player-api-react-zustand.git"
+    },
+    "license": "ISC",
+    "author": "",
+    "type": "commonjs",
     "main": "dist/index.js",
-    "module": "dist/index.mjs",
     "types": "dist/index.d.ts",
     "files": [
         "dist"
@@ -11,12 +21,14 @@
     "scripts": {
         "build": "tsup src/index.ts --dts --format cjs,esm"
     },
+    "devDependencies": {
+        "typescript": "^5",
+        "tsup": "^8",
+        "zustand": "^5.0.8"
+    },
     "peerDependencies": {
         "react": ">=17",
         "zustand": ">=4"
     },
-    "devDependencies": {
-        "typescript": "^5",
-        "tsup": "^8"
-    }
+    "module": "dist/index.mjs"
 }

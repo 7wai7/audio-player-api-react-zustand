@@ -1,11 +1,8 @@
-import ISong from "./ISong";
-
-export interface AudioStore {
+export interface IAudioStore<TSong> {
     audio: HTMLAudioElement;
-    _audioListenersInitialized: boolean;
 
-    playlist: ISong[];
-    currentSong: ISong | null;
+    playlist: TSong[];
+    currentSong: TSong | null;
     canPlayNext: boolean;
     canPlayPrev: boolean;
     lastPlaylistKey: string | null;
@@ -16,7 +13,7 @@ export interface AudioStore {
     volume: number;
     isMuted: boolean;
 
-    playSong: (song: ISong) => void;
+    playSong: (song: TSong) => void;
     playNext: () => void;
     playPrev: () => void;
     togglePlay: () => void;
@@ -25,16 +22,16 @@ export interface AudioStore {
     handleVolume: (value: number) => void;
     handleIsMuted: (value: boolean) => void;
 
-    setPlaylist: (songs: ISong[]) => void;
-    setPlaylistByKey: (key: string, songs: ISong[]) => void;
-    addToPlaylist: (song: ISong) => void;
-    removeFromPlaylist: (song: ISong) => void;
+    setPlaylist: (songs: TSong[]) => void;
+    setPlaylistByKey: (key: string, songs: TSong[]) => void;
+    addToPlaylist: (song: TSong) => void;
+    removeFromPlaylist: (song: TSong) => void;
     setAtIndexPlaylist: (from: number, to: number) => void;
 
     // function to rewrite a URL
     // for example: <`${process.env.MY_API}/api/audio?url=${song.url}`>
     // otherwise song.url will be used
-    buildUrlFn: (song: ISong) => string;
-    setBuildUrlFn: (fn: () => string) => void;
+    buildUrlFn: (song: TSong) => string;
+    setBuildUrlFn: (fn: (song: TSong) => string) => void;
     reset: () => void;
 };
